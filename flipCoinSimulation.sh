@@ -38,6 +38,25 @@ elif [ $TAILS -eq 21 ]
 elif [ $HEAD -eq $TAILS ]
 	then
 	echo "Its a Tie"
+
+	for((i=1; i<=50; i++))
+		do
+		B=$((RANDOM%2))
+			if [ $B -eq 1 ]
+				then
+				((HEAD++))
+			else
+				((TAILS++))
+			fi
+
+			if [ $(($HEAD - $TAILS)) -eq 2 ]
+				then
+				i=55
+			elif [ $(($TAILS - $HEAD)) -eq 2 ]
+				then
+				i=55
+			fi
+		done
 fi
 
 
