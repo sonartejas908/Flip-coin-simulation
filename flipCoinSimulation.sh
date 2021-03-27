@@ -1,10 +1,29 @@
 #!/bin/bash -x
 
-coinFlip=$((RANDOM%2))
-IS_HEAD=1
-if [ $coinFlip -eq $IS_HEAD ]
-	then
-		echo HEAD
-	else
-		echo TAIL
-fi
+MAX_COUNT=10
+FLIP_COUNT=0
+HEAD=0
+TAILS=0
+while [ $FLIP_COUNT != $MAX_COUNT ]
+do
+   A=$((RANDOM%2))
+
+
+   if [ $A -eq 1 ]
+      then
+      ((HEAD++))
+   else
+      ((TAILS++))
+   fi
+
+   ((FLIP_COUNT++))
+done
+echo HEAD=$HEAD
+echo TAILS=$TAILS
+
+
+
+
+
+
+
